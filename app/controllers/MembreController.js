@@ -29,7 +29,7 @@ let MembreController = {
             .catch( (err) => console.error(err.message) )
     },
     updateMembre : function (req, res) {
-
+y
     }
 };
 
