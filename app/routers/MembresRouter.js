@@ -14,4 +14,8 @@ router.post('/', function (req, res, next) {
    membreController.newMembre(req, res);
 });
 
+router.put('/', function (req, res, next) {
+    membreController.updateMembre(req, res);
+});
+
 module.exports = router;
