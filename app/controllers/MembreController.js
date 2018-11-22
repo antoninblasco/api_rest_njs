@@ -23,28 +23,13 @@ let MembreController = {
         membre.validate()
             .then( () => {
                 console.log("valide");
-                return membre.save() // Ajout
+                return membre.save() // retour d’une promesse
             } )
             .then( () => res.json({status: true, message : "membre ajouté" }) )
             .catch( (err) => console.error(err.message) )
     },
     updateMembre : function (req, res) {
-        var opts = { runValidators: true };
-            Membre.findOneAndUpdate({id: req.body.id}, req.body, opts)
-                .then((membre) => {
-                    if (membre) {
-                        res.json({status: true, message: "membre modifié : "});
-                    }
-                    else {
-                        res.json({status: false, message: "membre inexistant"});
-                    }
-                })
-                .catch((err) => res.json({status: false, message : "Erreur de validation : " + err }))
-    },
-    deleteMembre : function(req, res) {
-        Membre.deleteOne({id: req.params.id})
-            .then(() => res.json({status: true, message: "membre supprimé"}))
-            .catch((err) => res.json({status : false, message:"Erreur lors de la suppression : " + err}))
+
     }
 };
 
