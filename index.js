@@ -2,12 +2,14 @@ var express = require('express');
 var bodyParser = require("body-parser")
 let mongoose = require('mongoose');
 let routeurMembre = require('./app/routers/MembresRouter');
+let routeurUser = require('./app/routers/UsersRouter');
 
 var app = express();
 var router = express.Router();
 app.use(router);
 app.use(bodyParser.json());
 app.use('/api/membres', routeurMembre);
+app.use('/api/users', routeurUser);
 
 console.log("test");
 
