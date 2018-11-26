@@ -39,9 +39,12 @@ let MembreController = {
                         res.json({status: false, message: "membre inexistant"});
                     }
                 })
-                .catch((err) => res.json({status: false, message : "Erreur de validation : " + err }));
-
-
+                .catch((err) => res.json({status: false, message : "Erreur de validation : " + err }))
+    },
+    deleteMembre : function(req, res) {
+        Membre.deleteOne({id: req.params.id})
+            .then(() => res.json({status: true, message: "membre supprimé"}))
+            .catch((err) => res.json({status : false, message:"Erreur lors de la suppression : " + err}))
     }
 };
 

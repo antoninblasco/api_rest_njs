@@ -18,4 +18,8 @@ router.put('/', function (req, res, next) {
     membreController.updateMembre(req, res);
 });
 
+router.delete('/:id', function (req, res, next) {
+    membreController.deleteMembre(req, res);
+});
+
 module.exports = router;
